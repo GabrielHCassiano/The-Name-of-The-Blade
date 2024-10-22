@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mouseRotation;
     [SerializeField] private float speed;
 
+    [SerializeField] private Vector3 test;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector3(playerInputs.InputDirection.x, 0, playerInputs.InputDirection.y);
         direction = direction.normalized;
         direction = camPoint.transform.TransformDirection(direction);
+        direction.y = 0;
         rb.velocity = direction * speed;
     }
 
@@ -53,13 +55,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void CamLogic()
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, camPoint.transform.eulerAngles.y, transform.eulerAngles.z);
+
+
+        transform.eulerAngles = Vector3.up * Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+
 
         mouseRotation.x += playerInputs.MousePosition.x;
         mouseRotation.y += playerInputs.MousePosition.y;
 
+        mouseRotation.y = Mathf.Clamp(mouseRotation.y, -5, 10);
 
-        camPoint.transform.rotation = Quaternion.Euler(0, mouseRotation.x, 0);
+        camPoint.transform.rotation = Quaternion.Euler(mouseRotation.y, mouseRotation.x, 0);
     }
 
     public void AnimLogic()
