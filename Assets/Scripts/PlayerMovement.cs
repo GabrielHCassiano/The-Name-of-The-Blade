@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         playerInputs = GetComponent<PlayerInputs>();
         animator = GetComponentInChildren<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -71,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
         if (canCam)
         {
             if (direction != Vector3.zero)
-                transform.eulerAngles = Vector3.up * Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                transform.forward = Vector3.Slerp(transform.forward, direction, Time.deltaTime * 7);
+                //transform.eulerAngles = Vector3.up * Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
 
             mouseRotation.x += playerInputs.MousePosition.x;
