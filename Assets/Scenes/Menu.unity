@@ -1223,7 +1223,7 @@ MonoBehaviour:
       - m_Target: {fileID: 893917206}
         m_TargetAssemblyTypeName: SystemControl, Assembly-CSharp
         m_MethodName: SetMusic
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2033,7 +2033,7 @@ MonoBehaviour:
       - m_Target: {fileID: 893917206}
         m_TargetAssemblyTypeName: SystemControl, Assembly-CSharp
         m_MethodName: SetFullScreen
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2339,7 +2339,7 @@ MonoBehaviour:
       - m_Target: {fileID: 893917206}
         m_TargetAssemblyTypeName: SystemControl, Assembly-CSharp
         m_MethodName: SetMaster
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3201,7 +3201,7 @@ MonoBehaviour:
       - m_Target: {fileID: 893917206}
         m_TargetAssemblyTypeName: SystemControl, Assembly-CSharp
         m_MethodName: SetEffects
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5042,7 +5042,7 @@ MonoBehaviour:
       - m_Target: {fileID: 893917206}
         m_TargetAssemblyTypeName: SystemControl, Assembly-CSharp
         m_MethodName: SetResolution
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

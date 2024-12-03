@@ -26,6 +26,9 @@ public class PauseControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("Master : " + PlayerPrefs.GetFloat("Master", 0.5f));
+        print("Music : " + PlayerPrefs.GetFloat("Music", 0.5f));
+        print("Effects : " + PlayerPrefs.GetFloat("Effects", 0.5f));
         PauseLogic();
     }
 

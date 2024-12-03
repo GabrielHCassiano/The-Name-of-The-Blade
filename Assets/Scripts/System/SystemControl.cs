@@ -40,34 +40,34 @@ public class SystemControl : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void SetMaster()
+    public void SetMaster(float volume)
     {
-        PlayerPrefs.SetFloat("Master", sliderMaster.value);
-        audioMixer.SetFloat("Master", Mathf.Log10(sliderMaster.value) * 20);
+        PlayerPrefs.SetFloat("Master", volume);
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
     }
 
-    public void SetMusic()
+    public void SetMusic(float volume)
     {
-        PlayerPrefs.SetFloat("Music", sliderMusic.value);
-        audioMixer.SetFloat("Music", Mathf.Log10(sliderMusic.value) * 20);
+        PlayerPrefs.SetFloat("Music", volume);
+        audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
     }
-    public void SetEffects()
+    public void SetEffects(float volume)
     {
-        PlayerPrefs.SetFloat("Effects", sliderEffects.value);
-        audioMixer.SetFloat("Effects", Mathf.Log10(sliderEffects.value) * 20);
-    }
-
-    public void SetFullScreen()
-    {
-        PlayerPrefs.SetInt("Full", toggle.isOn ? 0 : 1);
-        Screen.fullScreen = toggle.isOn;
+        PlayerPrefs.SetFloat("Effects", volume);
+        audioMixer.SetFloat("Effects", Mathf.Log10(volume) * 20);
     }
 
-    public void SetResolution()
+    public void SetFullScreen(bool toggle)
     {
-        PlayerPrefs.SetInt("Resolution", dropResulution.value);
+        PlayerPrefs.SetInt("Full", toggle ? 0 : 1);
+        Screen.fullScreen = toggle;
+    }
 
-        switch (dropResulution.value)
+    public void SetResolution(int resolution)
+    {
+        PlayerPrefs.SetInt("Resolution", resolution);
+
+        switch (resolution)
         {
             case 0:
                 Screen.SetResolution(1920, 1080, Screen.fullScreen = toggle.isOn);
